@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.lostAndFound.Entity.User;
 
-@Repository 
+@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 }
