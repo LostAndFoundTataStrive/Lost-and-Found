@@ -9,7 +9,7 @@ import com.example.lostAndFound.Entity.FoundReports;
 import com.example.lostAndFound.Repository.FoundReportsRepository;
 
 @Service
-public class FoundService {
+public class FoundReportsService {
 
     @Autowired
     FoundReportsRepository foundReportsRepository;
