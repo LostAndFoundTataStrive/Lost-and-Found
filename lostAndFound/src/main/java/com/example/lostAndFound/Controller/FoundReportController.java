@@ -2,6 +2,9 @@ package com.example.lostAndFound.Controller;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,9 @@ import com.example.lostAndFound.Service.FoundReportsService;
 
 @RestController
 @RequestMapping("/foundReports")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class FoundReportController {
 
     @Autowired
