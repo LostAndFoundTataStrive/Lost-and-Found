@@ -1,3 +1,4 @@
+
 package com.example.lostAndFound.Service;
 
 import java.util.List;
@@ -29,26 +30,34 @@ public class FoundReportsService {
         return foundReportsRepository.findAll();
     }
 
-    // Fetch record by ID
-    public FoundReports fetchbyid(Integer id) {
+    // Fetch by ID
+    public FoundReports fetchbyid(Long id) {
         return foundReportsRepository.findById(id).orElse(null);
     }
 
     // Update record
-    public FoundReports update(Integer id, FoundReports foundReports) {
+    public FoundReports update(Long id, FoundReports foundReports) {
 
         FoundReports existing = foundReportsRepository.findById(id).orElse(null);
 
         if (existing != null) {
-            foundReports.setFoundReportId(id);
-            return foundReportsRepository.save(foundReports);
+
+            existing.setCategoryId(foundReports.getCategoryId());
+            existing.setLocationId(foundReports.getLocationId());
+            existing.setItemName(foundReports.getItemName());
+            existing.setDescription(foundReports.getDescription());
+            existing.setFoundDate(foundReports.getFoundDate());
+            existing.setImageUrl(foundReports.getImageUrl());
+            existing.setStatus(foundReports.getStatus());
+
+            return foundReportsRepository.save(existing);
         }
 
         return null;
     }
 
     // Delete record
-    public String delete(Integer id) {
+    public String delete(Long id) {
 
         if (foundReportsRepository.existsById(id)) {
             foundReportsRepository.deleteById(id);
